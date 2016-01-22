@@ -15,9 +15,24 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 
 ## Index
 
-### Introduction
+### First Steps
+
+[Overview](https://github.com/scotws/265SXB-Guide/blob/master/overview.md)
+[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md)
+
+### Hardware
+
+[Memory](https://github.com/scotws/265SXB-Guide/blob/master/memory.md)
+
+
+### Software
+
+[The Monitor](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
+
 
 ### Appendix
+
+[Link list](https://github.com/scotws/265SXB-Guide/blob/master/links.md)
 
 ## Disclaimer 
 
