@@ -6,9 +6,9 @@ The W65C265SXB ("265SXB" for short) is an engineering development board produced
 -- basically a single-board computer in the same sense as the Raspberry Pi -- by
 the Western Design Center (WDC). It is based on the W65C265S microcontroler,
 which in turn has a 65816 MPU at its core -- the 8/16-bit hybrid "big sibling"
-of the famous 6502 MPU that powered famous computers such as the VC-20 and Apple
-II. Because of the hybrid nature of the 65816, the 265SXB is pretty much the
-simplest way to get started with a classic 6502 system.
+of the famous 6502 MPU that powered classic computers such as the VC-20 and
+Apple II. Because of the hybrid nature of the 65816, the 265SXB is pretty much
+the simplest way to get started with a 6502 system.
 
 This document is an unofficial guide to setting up, programming, expanding, and
 using the 265SXB. It supplements the official documentation provided by WDC.
@@ -18,6 +18,7 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 ### First Steps
 
 [Overview](https://github.com/scotws/265SXB-Guide/blob/master/overview.md)
+
 [Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md)
 
 ### Hardware
@@ -34,10 +35,10 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 
 [Link list](https://github.com/scotws/265SXB-Guide/blob/master/links.md)
 
+
 ## Disclaimer 
 
-
-No liability for the contents of this document can be accepted. Use the
+No liability for the contents of these documents can be accepted. Use the
 concepts, examples and information at your own risk. There may be errors and
 inaccuracies that could be damaging to your system.  The author(s) take no
 responsibility for damage resulting. 
