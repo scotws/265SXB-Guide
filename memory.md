@@ -53,8 +53,8 @@ should be set to zero to make the signal low.
 
 ## Switching off the built-in 8k ROM 
 
-On reset the BCR is set to $01 which enables the internal ROM. To disabled 
-it bit 7 of the BCR register ($00:DF40) must be set. For example: 
+On reset the BCR register ($00:DF40)is set to $01 which enables the internal
+ROM. To disable it bit 7 of the BCR register must be set. For example: 
 ```
 LDA #$80     ; Disable Mensch ROM
 TSB BCR
