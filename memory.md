@@ -43,7 +43,7 @@ All non-CPU registers are found in the area from 00:DF00 to 00:DFFF together
 with 64 bytes of RAM as described above. 
 
 ![The simple memory maps. I/O area in
-red](https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB%20Memory.png)
+red](https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB_Memory.png)
 
 
 ## Adding Flash ROM
