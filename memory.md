@@ -22,4 +22,4 @@ range can be added.
 
 ## Adding Flash ROM
 
-## Switching off the built in 8k ROM 
+## Switching off the built-in 8k ROM 

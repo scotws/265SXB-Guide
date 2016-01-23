@@ -27,6 +27,14 @@ for the W65C816 CPU
 http://www.westerndesigncenter.com/Wdc/documentation/265monrom.pdf Mensch
 Monitor ROM Reference Manual
 
+http://www.westerndesigncenter.com/wdc/documentation/265iromlist.pdf Assembler
+code listing of the Mensch Monitor 
+
+https://github.com/WesternDesignCenter GitHub page of WDC
+
+https://github.com/WesternDesignCenter/TerminalPython Simple terminal interface
+for the 265SXB written in Python
+
 
 # User projects
 

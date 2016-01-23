@@ -8,6 +8,8 @@ for the terminal. This gives you access to the built-in monitor program.
 > attached to the UART port J5 at the bottom right to access the terminal. This
 > is incorrect.
 
+## Connecting a Linux machine
+
 As an example, we connect the 265SXB to a Ubuntu Linux machine via a USB port.
 
 1. Attach the USB cable to the board at J6, the power jack in the bottom middle.
@@ -32,5 +34,9 @@ This should bring up the Mensch Monitor, a very basic form of an operating
 system. See the chapter on [The
 Monitor](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md) for more
 detail.
+
+Instead of putty, the command-line program `minicom` can be used. See
+https://help.ubuntu.com/community/Minicom for details.
+
 
 
