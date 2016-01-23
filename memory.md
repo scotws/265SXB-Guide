@@ -39,8 +39,8 @@ various system vectors for interrupts.
 The W65C265SXB comes with an unpopulated PLCC socket designed to hold a
 SST39SF010A 128K x 8 flash memory chip (70nSec or faster). When installed
 32K from the Flash ROM is mapped into the address space between $00:8000
-and $00:FFFF. How much is visible depends on whether the mask ROM ($00:E000
-- $00:FFFF) and peripheral registers/RAM ($00:DF00 - $00:DFFF) are enabled.
+and $00:FFFF. How much is visible depends on whether the mask ROM ($00:E000 -
+$00:FFFF) and peripheral registers/RAM ($00:DF00 - $00:DFFF) are enabled.
 
 PDD4/PD4
 
