@@ -36,8 +36,20 @@ various system vectors for interrupts.
 
 ## Adding Flash ROM
 
+The W65C265SXB comes with an unpopulated PLCC socket designed to hold a
+SST39SF010A 128K x 8 flash memory chip (70nSec or faster). When installed
+32K from the Flash ROM is mapped into the address space between $00:8000
+and $00:FFFF. How much is visible depends on whether the mask ROM ($00:E000
+- $00:FFFF) and peripheral registers/RAM ($00:DF00 - $00:DFFF) are enabled.
+
+PDD4/PD4
+
 ## Switching off the built-in 8k ROM 
 
-(Bus Control Register (BCR, $DF40); default is $01, internal ROM enabled)
+The built in ROM can be enabled or disabled using bit 7 of the BCR register
+($00:DF40). On reset the BCR is set to $01 which enables the internal ROM.
+
+
+
 (System Speed Control Register (SSCR, $DF41) contains External RAM Select as bit
 2; default entry is $FB)
