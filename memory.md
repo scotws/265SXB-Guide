@@ -42,14 +42,30 @@ SST39SF010A 128K x 8 flash memory chip (70nSec or faster). When installed
 and $00:FFFF. How much is visible depends on whether the mask ROM ($00:E000 -
 $00:FFFF) and peripheral registers/RAM ($00:DF00 - $00:DFFF) are enabled.
 
-PDD4/PD4
+Which 32K bank of the 128K Flash ROM is accessible depends on the settings
+of the FAMS (PD4<4>) and FA15 (PD4<3>) signals. On reset the pins of PORT4
+are all configured as inputs (Port 4 Data Direction Register PDD4 $00:DF24
+contains $00) which allows external resistors to pull the signals high.
+
+To select another bank the PDD4<4:3> bits must be changed to make one or
+both of the pins outputs and the corresponding bit or bits in PD4 ($00:DF20)
+should be set to zero to make the signal low.
 
 ## Switching off the built-in 8k ROM 
 
-The built in ROM can be enabled or disabled using bit 7 of the BCR register
-($00:DF40). On reset the BCR is set to $01 which enables the internal ROM.
-
-
+On reset the BCR is set to $01 which enables the internal ROM. To disabled 
+it bit 7 of the BCR register ($00:DF40) must be set. For example: 
+```
+LDA #$80     ; Disable Mensch ROM
+TSB BCR
+```
+The internal ROM uses interrupts so user code must disable interrupt
+generation or execute an SEI to ignore interrupts until the internal ROM is
+renabled.
+```
+LDA #$80     ; Enable Mensch ROM
+TRB BCR
+```
 
 (System Speed Control Register (SSCR, $DF41) contains External RAM Select as bit
 2; default entry is $FB)
