@@ -18,6 +18,9 @@ Official entry point for the 265SXB. Includes links to download tool set
 http://www.westerndesigncenter.com/wdc/documentation/w65c265sxb.pdf Official
 datasheet for the 265SXB development board
 
+http://www.westerndesigncenter.com/wdc/Schematics/W65C265SXB.pdf Official
+schematic for the 265SXB development board
+
 http://www.westerndesigncenter.com/wdc/documentation/w65c265s.pdf Official
 dataseet for the W65C265 microcomputer 
 
@@ -28,12 +31,16 @@ http://www.westerndesigncenter.com/Wdc/documentation/265monrom.pdf Mensch
 Monitor ROM Reference Manual
 
 http://www.westerndesigncenter.com/wdc/documentation/265iromlist.pdf Assembler
-code listing of the Mensch Monitor 
+code listing of the Mensch Monitor (Known errors: page 4, line 179: bit 7
+selects for banks C0 to FF, not "CF")
 
 https://github.com/WesternDesignCenter GitHub page of WDC
 
 https://github.com/WesternDesignCenter/TerminalPython Simple terminal interface
 for the 265SXB written in Python
+
+http://www.alliancememory.com/pdf/sram/fa/as7c256av.1.2.pdf Datasheet for the
+AS7C256A-TIN 32k SRAM chip
 
 
 # User projects

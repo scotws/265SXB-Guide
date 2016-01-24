@@ -1,7 +1,5 @@
 # A Most Very Unofficial Guide to the W65C265SXB
 
-Scot W. Stevenson <scot.stevenson@gmail.com>
-
 The W65C265SXB ("265SXB" for short) is an engineering development board produced
 -- basically a single-board computer in the same sense as the Raspberry Pi -- by
 the Western Design Center (WDC). It is based on the W65C265S microcontroler,
@@ -19,11 +17,14 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 
 [Overview](https://github.com/scotws/265SXB-Guide/blob/master/overview.md)
 
-[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md)
+[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md) - First
+steps to get the 265SXB up and running.
 
 ### Hardware
 
-[Memory](https://github.com/scotws/265SXB-Guide/blob/master/memory.md)
+[Memory](https://github.com/scotws/265SXB-Guide/blob/master/memory.md) - Out of
+the box configuration, how to add Flash ROM, how to enable the full memory
+range.
 
 
 ### Software
