@@ -43,10 +43,10 @@ All non-CPU registers are found in the area from 00:DF00 to 00:DFFF together
 with 64 bytes of RAM as described above. 
 
 ![Memory Map]
-(https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB_Memory.png)
+(https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB_Memory_2.png)
 
-_Image: The two simplest memory configurations. Light: RAM, dark: ROM,
-red: I/O registers and 64 byte on-chip RAM; grey: empty._
+_Image: The three simplest memory configurations. Light: RAM, dark: ROM,
+red: I/O registers and 64 byte on-chip RAM, grey: empty._
 
 
 ## Enabling further address space
@@ -56,9 +56,10 @@ important of these is the Chip Select enable register (CS) at 00:DF27 with an
 inital value of $FB. A **clear** (0) bit selects:
 
 - **CS0B** External Port replacement (32 byte). Inactive when BCR0 = 0 (see
-  below) and 00:DF00 to 00:DF07 are used for internal I/O register selection
-  (P70). When BCR0 = 1 the external memory bus is enabled and CS0B is active for
-  the addresses 00:DF00 to DF1F. _Usually leave this unchanged at bit set (1)._
+  below) and 00:DF00 to 00:DF07 are used for internal I/O register selection.
+  When BCR0 = 1 the external memory bus is enabled and CS0B is active for the
+  addresses 00:DF00 to DF1F. This is pin 70 ("P70") on the microcomputer chip.
+  _Usually you will leave this unchanged and disabled with the bit set (1)._
 
 - **CS1B** Select coprocessor expansion. Affects the 64 bytes from 00:DFC0 to
   00:DFFF (P71). _Leave unchanged at bit set (1) unless you really know what you
@@ -72,18 +73,20 @@ inital value of $FB. A **clear** (0) bit selects:
 
 - **CS3B** Select "cache" memory 00:0200 to 00:7FFF. You might think this is
   enabled (bit clear, 0) on the 265SXB, but in fact it is _disabled_ (bit set,
-  1). In fact, clearing this bit is _disable_ the SRAM. In neither case does the
+  1). In fact, clearing this bit _disables_ the SRAM. In neither case does the
   LED go on, even though it should based on the [board
   schematic](http://www.westerndesigncenter.com/wdc/Schematics/W65C265SXB.pdf).
   This is Pin 73 of the microcomputer. _Leave it the way it is to use the
-  on-board 32k SRAM._
+  on-board 32k SRAM and try not to think about the documentation._
 
 - **CS4B** Select ROM from 00:8000 to 00:FFFF, which is the Flash ROM socket
   (see below, P74). Default is disabled (bit set, 0). Note that if we selected
   the on-chip burned-in ROM with CS2B (the default setting), only 24k of the
-  Flash ROM from 00:8000 to 00:DEFF can be selected. The on-chip addresses
-  00:DF00 to 00:DFFF will _never_ appear in this selection. _Select (clear bit,
-  0) to enable Flash ROM, see below._
+  Flash ROM from 00:8000 to 00:DEFF will be selected; this is the middle variant
+  in the image above. Otherwise, the Flash ROM will have a "hole" cut in it
+  (right variant). Put differently, the on-chip addresses 00:DF00 to 00:DFFF will _never_ 
+  be selected this way. _Select (clear bit, 0) to enable Flash ROM, see below
+  for more details._
 
 - **CS5B** Select the 4M address space in the banks 00 to 3F (P75). If CS2B,
   CS3B, and/or CS4B are selected, these will "punch holes" in this address
