@@ -18,16 +18,16 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 [Overview](https://github.com/scotws/265SXB-Guide/blob/master/overview.md)
 What's in the box.
 
-[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md) - Getting
+[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md) Getting
 the 265SXB up and running.
 
 [First
 Programs](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md)
-- Simple things to do with the board right out of the box.
+Simple things to do with the 265SXB right out of the box.
 
 ### Hardware
 
-[Memory](https://github.com/scotws/265SXB-Guide/blob/master/memory.md) - Out of
+[Memory](https://github.com/scotws/265SXB-Guide/blob/master/memory.md) Out of
 the box configuration, how to add Flash ROM, how to enable the full memory
 range.
 
@@ -35,11 +35,13 @@ range.
 ### Software
 
 [The Monitor](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
+Using the built-in Mensch Monitor program, a miniature operating system.
 
 
 ### Appendix
 
-[Link list](https://github.com/scotws/265SXB-Guide/blob/master/links.md)
+[Link list](https://github.com/scotws/265SXB-Guide/blob/master/links.md) Useful
+links.
 
 
 ## Disclaimer 
