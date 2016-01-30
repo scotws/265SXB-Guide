@@ -31,8 +31,7 @@ http://www.westerndesigncenter.com/Wdc/documentation/265monrom.pdf Mensch
 Monitor ROM Reference Manual
 
 http://www.westerndesigncenter.com/wdc/documentation/265iromlist.pdf Assembler
-code listing of the Mensch Monitor (Known errors: page 4, line 179: bit 7
-selects for banks C0 to FF, not "CF")
+code listing of the Mensch Monitor 
 
 https://github.com/WesternDesignCenter GitHub page of WDC
 

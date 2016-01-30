@@ -43,7 +43,6 @@ N  V  M  X  D  I  Z  C
 0  0  1  0  0  0  0  0  
 
 >
-
 ```
 The little program we entered by hand in machine language looks like this in 
 assembler:
@@ -54,7 +53,6 @@ Standard Assembler:                  Typist's Assembler:
     JSL 00E04B                          jsr.l 00:e04b
     BRK                                 brk
 ```
-
 What we are doing here is using the Mensch Monitor's built-in PUT_CHR routine
 to print the character in the Accumulator to the screen. More about using the
 built-in routines in the [Monitor chapter]
