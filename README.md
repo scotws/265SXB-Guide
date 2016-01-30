@@ -16,9 +16,14 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 ### First Steps
 
 [Overview](https://github.com/scotws/265SXB-Guide/blob/master/overview.md)
+What's in the box.
 
-[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md) - First
-steps to get the 265SXB up and running.
+[Setup](https://github.com/scotws/265SXB-Guide/blob/master/setup.md) - Getting
+the 265SXB up and running.
+
+[First
+Programs](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md)
+- Simple things to do with the board right out of the box.
 
 ### Hardware
 

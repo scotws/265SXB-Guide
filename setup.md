@@ -38,5 +38,3 @@ detail.
 Instead of putty, the command-line program `minicom` can be used. See
 https://help.ubuntu.com/community/Minicom for details.
 
-
-
