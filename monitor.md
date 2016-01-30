@@ -1,4 +1,4 @@
-# The 265SXB's built-in monitor program
+# The W65C265SXB's built-in monitor program
 
 The 265SXB is shipped with a small built-in operating system, the Mensch Monitor
 (MM). As of time of writing (Jan 2016), the build shipped with the board was
@@ -33,7 +33,8 @@ Release 2.0 from February 10, 1995.
 
 ## The Code Listing
 
-WDC also provides a [full listing](http://www.westerndesigncenter.com/wdc/documentation/265iromlist.pdf Assembler
+WDC also provides a [full
+listing](http://www.westerndesigncenter.com/wdc/documentation/265iromlist.pdf) Assembler
 code listing of the Mensch Monitor) of the Mensch Monitor which you will be
 referencing a lot. Note at the end there is a symbol table you can use to find
 where jump routines are located. 
