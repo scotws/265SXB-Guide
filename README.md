@@ -43,6 +43,13 @@ Using the built-in Mensch Monitor program, a miniature operating system.
 [Link list:](https://github.com/scotws/265SXB-Guide/blob/master/links.md) Useful
 links.
 
+[Erratum:](https://github.com/scotws/265SXB-Guide/blob/master/erratum.md) List
+of known errors in the Manual and bugs in the Mensch Monitor ROM listing.
+
+## Thanks
+
+Various memembers of the [6502.org Forum](http://forum.6502.org/index.php)
+contributed to this document and gave invaluable advice.
 
 ## Disclaimer 
 

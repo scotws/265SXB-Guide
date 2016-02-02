@@ -40,14 +40,6 @@ referencing a lot. Note at the end there is a symbol table you can use to find
 where jump routines are located. 
 
 
-### Known Code Listing Errors
-
-Manual Release 2.0, Feb 10, 1995:
-
-- Page 4, line 179, comment: bit 7 selects for banks $C0 to $FF, not "to CF"
-
-
-
 ## Accessing the Built-In Routines
 
 The Mensch Monitor provides a whole number of subroutines that can be accessed
