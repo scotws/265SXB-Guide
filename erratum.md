@@ -12,8 +12,8 @@ of the Mensch Monitor ROM.
 
 ## The Mensch Monitor ROM assembler code listing
 
-- Page 4, line 179, in comment: bit 7 selects for banks $C0 to $FF, not "to CF"
-- Page 109, lines 4970-4972, in code: CONTROL_TONES pushes Direct Page and Bank
+- page 4, line 179, in comment: bit 7 selects for banks $C0 to $FF, not "to CF"
+- page 109, lines 4970-4972, in code: CONTROL_TONES pushes Direct Page and Bank
   registers to the stack at the beginning of the routine, but does not pull them
   before exit (missing ```PLB``` and ```PLD``` instructions).
 

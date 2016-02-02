@@ -1,0 +1,26 @@
+TODO List for the Inofficial W65C265SXB Guide
+
+(Do not link to this text from inside the guide)
+
+FIRST STEPS
+  - Addition stuff to buy (Flash ROM chips, TTL-USB cable, rubber feet)
+
+HARDWARE
+  - Adding the Flash ROM chips
+  - Interfacing with the a TTL-USB cable to port 3 (why, which pins)
+
+SOFTWARE
+  - Installing alternative monitors (see GitHub projects)
+  - Clearing Flash ROM 
+
+SIMPLE PROJECTS
+  - Breadboarding a single 512 RAM chip (see http://forum.6502.org/viewtopic.php?f=1&t=3552)
+
+DAUGHTER BOARDS ("SHIELDS")
+  - 2 x 512 RAM (see http://forum.6502.org/viewtopic.php?f=1&t=3552)
+
+----
+
+THINGS TO RESEARCH:
+  - Bit banging SPI via serial ports?
+

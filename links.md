@@ -47,6 +47,8 @@ AS7C256A-TIN 32k SRAM chip
 https://github.com/andrew-jacobs/w65c265sxb-hacker A tool for modifying the
 firmware on your WDC W65C265SXB Development Board
 
+https://github.com/Mortis69/EasySXB Terminal/program loader for SXB boards
+
 https://rodbiresch.wordpress.com/tag/w65c816/ Rod Biresch introduction to 65816
 on the 265SXB
 
