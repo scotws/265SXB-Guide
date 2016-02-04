@@ -11,10 +11,12 @@ HARDWARE
 
 SOFTWARE
   - Installing alternative monitors (see GitHub projects)
-  - Clearing Flash ROM 
+  - Writing and clearing Flash ROM 
 
 SIMPLE PROJECTS
   - Breadboarding a single 512 RAM chip (see http://forum.6502.org/viewtopic.php?f=1&t=3552)
+  - Breadboarding a single 512 Flash ROM chip
+  - Accessing stuff via the serial ports
 
 DAUGHTER BOARDS ("SHIELDS")
   - 2 x 512 RAM (see http://forum.6502.org/viewtopic.php?f=1&t=3552)

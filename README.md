@@ -17,10 +17,8 @@ using the 265SXB. It supplements the official documentation provided by WDC.
 
 [Overview:](https://github.com/scotws/265SXB-Guide/blob/master/overview.md)
 What's in the box.
-
 [Setup:](https://github.com/scotws/265SXB-Guide/blob/master/setup.md) Getting
 the 265SXB up and running.
-
 [First
 Programs:](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md)
 Simple things to do with the 265SXB right out of the box.
@@ -42,7 +40,6 @@ Using the built-in Mensch Monitor program, a miniature operating system.
 
 [Link list:](https://github.com/scotws/265SXB-Guide/blob/master/links.md) Useful
 links.
-
 [Erratum:](https://github.com/scotws/265SXB-Guide/blob/master/erratum.md) List
 of known errors in the Manual and bugs in the Mensch Monitor ROM listing.
 

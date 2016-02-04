@@ -115,5 +115,3 @@ listing at 00:E14B). In this configuration, bit 2 is kept as "1", which makes
 sure the system uses the on-chip interrupt vectors, on-chip ROM, on-chip RAM,
 timer, control and other regiesters from 00:DF00 to 00:DFBF and 00:0000 to
 00:01FF.
-
-
