@@ -45,7 +45,7 @@ of known errors in the Manual and bugs in the Mensch Monitor ROM listing.
 
 ## Thanks
 
-Various memembers of the [6502.org Forum](http://forum.6502.org/index.php)
+Various members of the [6502.org Forum](http://forum.6502.org/index.php)
 contributed to this document and gave invaluable advice.
 
 ## Disclaimer 
