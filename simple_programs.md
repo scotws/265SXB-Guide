@@ -3,7 +3,7 @@
 Now that the 265SXB is set up and running, we'll prove that it's alive with a
 few simple programs.
 
-## Printing an "a"
+## Printing a single character
 
 In this first example, we're going to print the letter "a" on the screen. Get
 the 265SXB started and the Mensch Monitor running. Now, press the "m" key and

@@ -48,11 +48,44 @@ from user programs.
 
 ### Especially useful routines
 
-**PUT_CHR** (00:E04B) - Output a single character to the console. Note that this
-routine must be called with a long subroutine jump as ```JSL 00E04B``` to work;
-see [the example
+**PUT_CHR** ("put character", 00:E04B) - Output a single character to the
+console. Note that this routine must be called with a long subroutine jump as
+```JSL 00E04B```. See [the example
 at](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md#printing-an-a).
 Though the Manual states that the character is printed to port 3, it will
 actually work fine with the basic USB port. 
 
+**PUT_STR** ("put string", 00:E04E; main code at 00:F3A1) - Output a string to
+the console. Must be called with long subroutine jump as ```JSL 00E04E```. Put
+the bank of the string address in the 8-bit A register, and the rest of the
+address in the 16-bit X register. The string must be terminated by a zero byte
+(00, ASCII "null"). This routine calls PUT_CHR.  
+```; PUT_STR example program
+        .origin 2000            ; start at 00:2000
+        .mpu 65816 
 
+        clc                     ; switch to native mode
+        xce 
+        sep 20                  ; switch A register to 8 bit
+        rep 10                  ; switch X register to 16 bit
+
+        lda.# 00                ; load bank byte in A
+        ldx.# teststr           ; load 16-bit address in X
+        jsr.l 00e04e            ; JSL to PUT_STR
+
+        brk 00                  ; 00 is signature byte
+
+teststr
+        .string0 "Mensch"       ; assembler adds final zero byte
+        .end
+```
+Hexdump with 00:2000 as start location for testing with Mensch Monitor:
+```
+002000: 18 fb e2 20 c2 10 a9 00 a2 11 20 22 4e e0 00 00 
+002010: 00 4d 65 6e 73 63 68 00 
+```
+
+The manual states the maximum string size is limited to 640 characters. No
+arguments are returned, no errors are reported, all registers are preserved.
+Though the Manual states that the character is printed to port 3, it will
+work fine with the basic USB port.
