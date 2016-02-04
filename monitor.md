@@ -75,7 +75,7 @@ address in the 16-bit X register. The string must be terminated by a zero byte
 
         brk 00                  ; 00 is signature byte
 
-teststr
+ teststr
         .string0 "Mensch"       ; assembler adds final zero byte
         .end
 ```
