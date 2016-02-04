@@ -60,7 +60,8 @@ the console. Must be called with long subroutine jump as ```JSL 00E04E```. Put
 the bank of the string address in the 8-bit A register, and the rest of the
 address in the 16-bit X register. The string must be terminated by a zero byte
 (00, ASCII "null"). This routine calls PUT_CHR.  
-```; PUT_STR example program
+```
+  ; PUT_STR example program
         .origin 2000            ; start at 00:2000
         .mpu 65816 
 
@@ -75,7 +76,7 @@ address in the 16-bit X register. The string must be terminated by a zero byte
 
         brk 00                  ; 00 is signature byte
 
- teststr
+  teststr
         .string0 "Mensch"       ; assembler adds final zero byte
         .end
 ```
