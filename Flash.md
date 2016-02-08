@@ -68,8 +68,8 @@ When you are writing a ROM you should either use banks 0-2, which will be
 deselected when the reset button is pressed, or only change detection string
 to 'WDC' when the code is thoroughly tested.
 
-If you are writing you ROM with the WDC assembler then the ROM header is
-defined as follows:
+If you are writing your own ROM with the WDC assembler then the ROM header
+is defined as follows:
 ```
                 section offset $8000
                 
