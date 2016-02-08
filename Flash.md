@@ -6,8 +6,8 @@ is powered on.
 
 The SST39SF010A memory chip is writeable under software control. Under normal
 operation the chip acts as a standard ROM but by writing an unlock sequence
-to specific offsets within the ROM the chip can be made to erase itself (
-entirely or in 4K chunks) and write bytes to 
+to specific offsets within the ROM the chip can be made to erase itself
+(entirely or in 4K chunks) and store new data.
 
 ## Selecting Banks
 
