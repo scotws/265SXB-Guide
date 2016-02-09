@@ -28,13 +28,12 @@ Simple things to do with the 265SXB right out of the box.
 [Memory:](https://github.com/scotws/265SXB-Guide/blob/master/memory.md) Out of
 the box configuration, how to add Flash ROM, how to enable the full memory
 range.
-
 [Flash:](https://github.com/scotws/265SXB-Guide/blob/master/flash.md) How to erase
-and program the flash memory chip under software control.
+and program the flash memory chip under software control.  
 
 ### Software
 
-[WDC Tools:[(https://github.com/scotws/265SXB-Guide/blob/master/wdc_tools.md)  
+[WDC Tools:](https://github.com/scotws/265SXB-Guide/blob/master/wdc_tools.md)  
 [The Monitor:](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
 Using the built-in Mensch Monitor program, a miniature operating system.
 
