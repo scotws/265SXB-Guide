@@ -32,6 +32,7 @@ range.
 
 ### Software
 
+[WDC Tools:[(https://github.com/scotws/265SXB-Guide/blob/master/wdc_tools.md)  
 [The Monitor:](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
 Using the built-in Mensch Monitor program, a miniature operating system.
 
