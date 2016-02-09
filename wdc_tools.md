@@ -1,6 +1,6 @@
-# The WDC Tools for the W65C265SXC
+# The WDC Tools for the W65C265SXB
 
-The 265SXC comes with a set of tools provided by WDC at
+The 265SXB comes with a set of tools provided by WDC at
 [http://wdc65xx.com/Products/WDCTools/](http://wdc65xx.com/Products/WDCTools/).
 To download them, enter your name and e-mail address at the website and you will
 receive an email with a download link for the zip file. 
