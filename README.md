@@ -33,7 +33,8 @@ and program the flash memory chip under software control.
 
 ### Software
 
-[WDC Tools:](https://github.com/scotws/265SXB-Guide/blob/master/wdc_tools.md)  
+[WDC Tools:](https://github.com/scotws/265SXB-Guide/blob/master/wdc_tools.md)
+Installing and working with the WDC development packages.  
 [The Monitor:](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
 Using the built-in Mensch Monitor program, a miniature operating system.
 
