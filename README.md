@@ -26,10 +26,10 @@ Simple things to do with the 265SXB right out of the box.
 ### Hardware
 
 [Memory:](https://github.com/scotws/265SXB-Guide/blob/master/memory.md) Out of
-the box configuration, how to add Flash ROM, how to enable the full memory
-range.  
-[Flash:](https://github.com/scotws/265SXB-Guide/blob/master/flash.md) How to erase
-and program the flash memory chip under software control.  
+the box configuration, how chip select signals are generated.
+[Flash:](https://github.com/scotws/265SXB-Guide/blob/master/flash.md) How to
+install, select a bank, and erase and program the flash memory chip under
+software control.  
 
 ### Software
 
