@@ -1,7 +1,15 @@
-# A Simple First Program
+# Simple First Programs for the W65C265SXB
 
 Now that the 265SXB is set up and running, we'll prove that it's alive with a
-few simple programs.
+few very simple programs.
+
+### How to enter code the hard way
+
+For these examples, we'll be entering the machine code byte-by-byte through the
+console and the Mensch Monitor routines, the most primitive way to program the
+265SXB. In later chapters, we'll show more efficient, but also more complicated
+ways to add code. 
+
 
 ## Printing a single character
 
