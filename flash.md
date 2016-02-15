@@ -2,14 +2,12 @@
 
 The 265SXB comes with an unpopulated PLCC socket designed to hold a 128K flash
 memory chip (70ns or faster; U3 in upper right corner of the board). When
-installed, 32K from the Flash ROM is mapped into the address space between
+installed, 32K of the flash memory is mapped into the address space between
 00:8000 and 00:FFFF. How much is visible depends on whether the mask ROM
 (00:E000 - 00:FFFF) and peripheral registers/on-chip RAM (00:DF00 - 00:DFFF) are
 enabled. You can switch between the four 32K banks. Also, installing flash
 memory allows you to develop alternative ROM images that can execute
 automatically when the board is powered on.
-
-## The SST39SF010A Flash Memory chip
 
 For these examples we will use the
 [SST39SF010A](http://ww1.microchip.com/downloads/en/DeviceDoc/25022A.pdf) flash
@@ -18,7 +16,7 @@ operation the chip acts as a standard ROM but by writing an unlock sequence to
 specific offsets within the ROM the chip can be made to erase itself (entirely
 or in 4K sectors) and store new data.
 
-# Selecting Banks
+## Selecting Banks
 
 The SST39SF010A provides 128K of memory, and comes with 17 address pins, A0 to
 A16. Since we only need 32K at any given time for the 265SXB, two of those pins
@@ -67,16 +65,16 @@ RomSelect:
                 rts                             ; Done
 ```
 
-# Writing and Erasing Flash Memory
+## Writing and Erasing Flash Memory
 
 The in-place write and erase operations of the SST39SF010A are controlled by
 command sequences that are sent to specific addresses with specific data. These
 sequences only use the 15 address lines A0 to A14, which allows us to specifiy
 that we want the high half of the 265SXB Bank 0 address through A15.
 
-> In the following examples, we make this clear using the notation of
-> ```$8000+$5555``` and ```$8000+2aaa``` for the addresses in the command
-> sequence. 
+> In the following code, we make this clear using the notation of
+> ```$8000+$5555``` and ```$8000+2aaa``` for the addresses $5555 and $2AAA
+> required.
 
 For the complete list of command sequences, see the [SST39SF010A
 documentation.](http://ww1.microchip.com/downloads/en/DeviceDoc/25022A.pdf)
@@ -85,7 +83,7 @@ Whenever the flash chip is performing an internal operation, a read will
 return a value in which bit 7 is the inverse of the real value. During an erase,
 for instance, this means a read will return $7F until the erase is finished.
 
-## Chip Erase
+### Chip Erase
 
 The SST39SF010A provides a Chip-Erase operation, which allows the user
 to erase the entire memory array to the '1s' state. This is useful when the
@@ -119,7 +117,7 @@ EraseWait:
 The chip erase operation takes around 70 mSec to complete. The controlling
 application should either perform a timed delay or poll the chip.
 
-## Sector Erase
+### Sector Erase
 
 The Sector-Erase operation allows the system to erase the device on a
 sector-by-sector basis. The sector architecture is based on uniform sector size
@@ -161,7 +159,7 @@ EraseWait:
 Erasing a sector takes around 18 mSec so further accesses to the flash memory
 must wait until the operation completes. 
 
-## Writing Bytes
+### Writing Bytes
 
 The flash chip can be programmed on a byte-by-byte basis. The write operation
 can only store '0' bits into the memory so the region to be programmed must be
@@ -195,7 +193,29 @@ A write byte operation takes around 14 uSec. As with the erase operations
 you can perform read operation on the memory to find out when the write has
 been completed.
 
-# Autobooting ROM Images
+
+## Switching off the built-in 8K ROM 
+
+On reset the BCR register (00:DF40) is set to $01 which enables the internal
+ROM. To disable it bit 7 of the BCR register must be set. For example: 
+```
+LDA #$80     ; Disable Mensch ROM
+TSB BCR
+```
+The internal ROM uses interrupts so user code must disable interrupt
+generation, execute an SEI to ignore interrupts, or provide its own interrupt
+vectors until the internal ROM is renabled.
+```
+LDA #$80     ; Enable Mensch ROM
+TRB BCR
+```
+![Memory Map]
+(https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB_Memory_2.p
+
+_Image: Bank 00 showing the three simplest memory configurations. Light: RAM,
+dark: ROM, red: I/O registers and 64 byte on-chip RAM, grey: empty._
+
+## Autobooting ROM Images
 
 During the power on reset processing the Mensch Monitor checks the memory at
 00:8000 for the string 'WDC'. If found the monitor jumps to address 00:8004

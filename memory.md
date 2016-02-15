@@ -15,9 +15,16 @@ increase the address space.
 
 The 265SXB is shipped with the following memory configuration:
 
+![Memory Map]
+(https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB_Memory_OOTB.png)
+
+_Image: Bank 00 showing the basic memory configuration. Light: RAM,
+dark: ROM, red: I/O registers and 64 byte on-chip RAM, grey: empty._
+
+
 ### RAM
 
-The W65C265S microcomputer comes with 576 bytes of RAM on-chip, from 00:0000 to
+The W65C265S microcomputer comes with 576 bytes of RAM on-chip: From 00:0000 to
 00:01FF (512 bytes) and from 00:DF80 to 00:DFBF (64 bytes). The 265SXB also
 includes 32K of SRAM as an AS7C256A-10TIN (U2 on the upper left) enabled by
 default that span from 00:0000 to 00:7FFF.
@@ -39,53 +46,10 @@ various system vectors for interrupts.
 ### I/O and peripheral registers
 
 All non-CPU registers are found in the area from 00:DF00 to 00:DFFF together
-with 64 bytes of RAM as described above. 
+with 64 bytes of RAM as described above.
 
 
-## Adding More Memory
-
-### Adding Flash ROM
-
-The 265SXB comes with an unpopulated PLCC socket designed to hold a
-SST39SF010A 128K x 8 flash memory chip (70nSec or faster; U3 in upper right
-corner of the board). When installed, 32K from the Flash ROM is mapped into the
-address space between 00:8000 and 00:FFFF. How much is visible depends on
-whether the mask ROM (00:E000 - 00:FFFF) and peripheral registers/on-chip RAM
-(00:DF00 - 00:DFFF) are enabled.
-
-### Selecting a 32K bank of Flash ROM
-
-Which 32K bank of the 128K Flash ROM is accessible depends on the settings
-of the FAMS (PD4<4>) and FA15 (PD4<3>) signals. On reset the pins of Port 4 are
-all configured as inputs (Port 4 Data Direction Register PDD4 00:DF24 contains
-$00) which allows external resistors to pull the signals high.
-
-To select another bank, the PDD4<4:3> bits must be changed to make one or
-both of the pins outputs and the corresponding bit or bits in PD4 (00:DF20)
-should be set to zero to make the signal low.
-
-### Switching off the built-in 8K ROM 
-
-On reset the BCR register (00:DF40) is set to $01 which enables the internal
-ROM. To disable it bit 7 of the BCR register must be set. For example: 
-```
-LDA #$80     ; Disable Mensch ROM
-TSB BCR
-```
-The internal ROM uses interrupts so user code must disable interrupt
-generation, execute an SEI to ignore interrupts, or provide its own interrupt
-vectors until the internal ROM is renabled.
-```
-LDA #$80     ; Enable Mensch ROM
-TRB BCR
-```
-![Memory Map]
-(https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C256SXB_Memory_2.png)
-
-_Image: Bank 00 showing the three simplest memory configurations. Light: RAM,
-dark: ROM, red: I/O registers and 64 byte on-chip RAM, grey: empty._
-
-### How the Chip Select Signals are Generated
+### How the Chip Select signals are generated
 
 Chip selection on the 265SXB is handled by lines that are attached to Port 7. In
 contrast to the other ports, it is output only. The Port 7 Chip Select Register
@@ -115,3 +79,14 @@ listing at 00:E14B). In this configuration, bit 2 is kept as "1", which makes
 sure the system uses the on-chip interrupt vectors, on-chip ROM, on-chip RAM,
 timer, control and other regiesters from 00:DF00 to 00:DFBF and 00:0000 to
 00:01FF.
+
+## Adding more memory
+
+The simplest way to add more memory is to install Flash memory in the
+unpopulated PLCC socket (U3 in upper right corner of the board); see the
+[chapter on flash
+memory](https://github.com/scotws/265SXB-Guide/blob/master/flash.md) for
+details. 
+
+Beyond that, memory must be added with an external daughter board ("shield")
+attached to the 50 pin port.
