@@ -45,7 +45,7 @@ where jump routines are located.
 The Mensch Monitor provides a whole number of subroutines that can be accessed
 from user programs. Note that most of these must be accessed through a long
 subroutine jump - for example, ```JSL 00E04B``` to print a character. They
-assume that the processor is in Native Mode, not Emulated at a 6502.
+assume that the processor is in Native Mode, not Emulated as a 6502.
 
 ### Useful locations and variables
 
