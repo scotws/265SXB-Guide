@@ -1,20 +1,40 @@
-# Flash Memory
+# W65C265SXB Flash Memory 
 
-If you install a SST39SF010A flash memory chip into your 265SXB then you can
-develop alternative ROM images that can execute automatically when the board
-is powered on.
+The 265SXB comes with an unpopulated PLCC socket designed to hold a 128K flash
+memory chip (70ns or faster; U3 in upper right corner of the board). When
+installed, 32K from the Flash ROM is mapped into the address space between
+00:8000 and 00:FFFF. How much is visible depends on whether the mask ROM
+(00:E000 - 00:FFFF) and peripheral registers/on-chip RAM (00:DF00 - 00:DFFF) are
+enabled. You can switch between the four 32K banks. Also, installing flash
+memory allows you to develop alternative ROM images that can execute
+automatically when the board is powered on.
 
-The SST39SF010A memory chip is writeable under software control. Under normal
-operation the chip acts as a standard ROM but by writing an unlock sequence
-to specific offsets within the ROM the chip can be made to erase itself
-(entirely or in 4K sectors) and store new data.
+## The SST39SF010A Flash Memory chip
 
-## Selecting Banks
+For these examples we will use the
+[SST39SF010A](http://ww1.microchip.com/downloads/en/DeviceDoc/25022A.pdf) flash
+memory chip. In the 265SXB, it is writeable under software control. Under normal
+operation the chip acts as a standard ROM but by writing an unlock sequence to
+specific offsets within the ROM the chip can be made to erase itself (entirely
+or in 4K sectors) and store new data.
 
-The active 32K region of the 128K flash memory chip can be controlled by pins
-connected to port 4. On reset the PD4<4> and PD4<3> are configured as inputs
-and external resistors pull the FAMS and FA15 signals high. To access other
-banks one or both of the pins should be reconfigured as a low output.
+# Selecting Banks
+
+The SST39SF010A provides 128K of memory, and comes with 17 address pins, A0 to
+A16. Since we only need 32K at any given time for the 265SXB, two of those pins
+are used to select which one of the four banks is active. The pins are
+controlled by the lines FA15 and FAMS on the 265SXB. FA15 is connected to
+address line 15 of the Flash memory, and FAMS to address line 16, which in flash
+memory chip documentation is called the "most significant address" (MS) of the
+memory chip - hence the names. 
+
+Both pins are connected to port 4, which is controlled by a Data Direction
+Register (PDD4, 00:DF24) and the actual Data Register (PD4, 00:DF20). On reset,
+the PD4<4> and PD4<3> are configured as inputs and external resistors pull the
+FAMS and FA15 signals high. We can can take this to mean that we are accessing
+the fourth bank (binary "11", or bank 3) of the flash memory be default. To
+access the other banks (0 to 2), one or both of the pins should be reconfigured
+as a low output.
 
 The following routine is used in the W65C265 version of the SXB-Hacker to set
 the pins for a specific bank.
@@ -46,6 +66,24 @@ RomSelect:
                 plp                             ; Restore register sizes
                 rts                             ; Done
 ```
+
+# Writing and Erasing Flash Memory
+
+The in-place write and erase operations of the SST39SF010A are controlled by
+command sequences that are sent to specific addresses with specific data. These
+sequences only use the 15 address lines A0 to A14, which allows us to specifiy
+that we want the high half of the 265SXB Bank 0 address through A15.
+
+> In the following examples, we make this clear using the notation of
+> ```$8000+$5555``` and ```$8000+2aaa``` for the addresses in the command
+> sequence. 
+
+For the complete list of command sequences, see the [SST39SF010A
+documentation.](http://ww1.microchip.com/downloads/en/DeviceDoc/25022A.pdf)
+
+Whenever the flash chip is performing an internal operation, a read will
+return a value in which bit 7 is the inverse of the real value. During an erase,
+for instance, this means a read will return $7F until the erase is finished.
 
 ## Chip Erase
 
@@ -80,10 +118,6 @@ EraseWait:
 
 The chip erase operation takes around 70 mSec to complete. The controlling
 application should either perform a timed delay or poll the chip.
-
-Whenever the flash chip is performing an internal operation a read will
-return a value in which bit 7 is the inverse of the real value. During an
-erase this means a read will return $7F until the erase is finished.
 
 ## Sector Erase
 
