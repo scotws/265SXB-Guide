@@ -51,9 +51,9 @@ from user programs.
 **PUT_CHR** ("put character", 00:E04B) - Output a single character to the
 console. Note that this routine must be called with a long subroutine jump as
 ```JSL 00E04B```. See [the example
-at](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md) .
-Though the Manual states that the character is printed to port 3, it will
-actually work fine with the basic USB port. 
+at](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md)
+Simple Programs. Though the Manual states that the character is printed to port
+3, it will actually work fine with the basic USB port. 
 
 **PUT_STR** ("put string", 00:E04E; main code at 00:F3A1) - Output a string to
 the console. Must be called with long subroutine jump as ```JSL 00E04E```. Put
