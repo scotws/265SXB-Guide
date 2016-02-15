@@ -7,7 +7,7 @@ The 265SXB is shipped with a small built-in operating system, the Mensch Monitor
 The MM is "burned" into the board and cannot be removed, replaced, or
 overwritten. 
 
-> Because of this, no backup is needed. 
+> Because of this, no backup of the MM is needed. 
 
 However, you are able to jump from it to other ROM areas (if installed) and even
 mask it completely; see the chapter [on
@@ -43,7 +43,9 @@ where jump routines are located.
 ## Accessing the Built-In Routines
 
 The Mensch Monitor provides a whole number of subroutines that can be accessed
-from user programs. 
+from user programs. Note that most of these must be accessed through a long
+subroutine jump - for example, ```JSR 00E04B``` to print a character. They
+assume that the processor is in Native Mode, not Emulated at a 6502.
 
 ### Useful locations and variables
 
