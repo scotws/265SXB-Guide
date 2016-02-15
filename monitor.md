@@ -64,26 +64,26 @@ characters (decimal). Relevant code starts at 00:E2BC.
 
 **GET_BYTE_FROM_PC** ("get byte from input buffer", 00:E033, main code at
 00:FBF9) - Returns a character from the input buffer. This routine must be
-called with a long subroutine jump as ```JSR 00E033```. If there is data in the
+called with a long subroutine jump as ```JSL 00E033```. If there is data in the
 buffer, it is returned with the carry bit clear and the data in the 8-bit
 accumulator. Otherwise, carry bit is set, and 8-bit accumulator contains 00
 (no data) or 80 (CONTROL-C or ESC received).
 
 **GET_CHR** ("get character", 00:E036, main code at 00:F1F9) - Get a single
 character from the console. Note this routine must be called with a long
-subroutine jump as ```JSR 00E036```. Returns with the carry bit clear and the
+subroutine jump as ```JSL 00E036```. Returns with the carry bit clear and the
 character received in 8-bit A register.
 
 **GET_PUT_CHR** ("get a character and echo to console", 00:E03C, main code at
 00:F1C9) Gets a character from the input buffer and echos it back. This routine
-must be called with a long subroutine jump as ```JSR 00E03C```. Returns with the
+must be called with a long subroutine jump as ```JSL 00E03C```. Returns with the
 received character in 8-bit A register and the carry bit clear. Calls
 GET_BYTE_FROM_PC. 
 
 **GET_STR** ("get string", 00:E03F, main code at 00:F3D7) - Receives a string
 from the console until either ENTER or ESC is received and stores the string
 with a terminating 00 byte to a specified buffer. This routine must be called
-with a long subroutine jump as ```JSR 00E03F```. The address of the buffer must
+with a long subroutine jump as ```JSL 00E03F```. The address of the buffer must
 be provided by the bank byte in the 8-bit A register and the rest of the address
 in 16-bit X register. No arguments are returned. If the string entry was ended
 by an ENTER, the carry bit will be clear. If it was ended by an ESC, the carry
