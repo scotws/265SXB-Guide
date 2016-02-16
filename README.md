@@ -22,6 +22,9 @@ the 265SXB up and running.
 [First
 Programs:](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md)
 Simple things to do with the 265SXB right out of the box.  
+[Uploading
+Programs:](https://github.com/scotws/265SXB-Guide/blob/master/entering_code.md)
+How to enter and/or upload programs to the 265SXB.  
 
 ### Hardware
 

@@ -21,7 +21,7 @@ The code size is 24 bytes.
 We have already seen the simplest, but also hardest way to enter code: Type it in
 through the Monitor by hand, as we did with our [first simple
 program](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md).
-Once you have the Monitor started, press the "m" key, enter ```002000`` as the
+Once you have the Monitor started, press the "m" key, enter ```002000``` as the
 starting address, and type in the above sequence of bytes. To run the program,
 press the "j" key and enter ```002000``` as the start address. 
 
