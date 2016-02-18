@@ -41,6 +41,10 @@ Installing and working with the WDC development packages.
 [The Monitor:](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
 Using the built-in Mensch Monitor program, a miniature operating system.
 
+### Projects and Expansions
+
+[Expansion Boards](https://github.com/scotws/265SXB-Guide/blob/master/daughters.md) 
+Expansion boards, also known as "daughter boards" or shields.   
 
 ### Appendix
 
