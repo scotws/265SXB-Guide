@@ -43,7 +43,7 @@ Using the built-in Mensch Monitor program, a miniature operating system.
 
 ### Projects and Expansions
 
-[Expansions](https://github.com/scotws/265SXB-Guide/blob/master/expansions.md) 
+[Expansions:](https://github.com/scotws/265SXB-Guide/blob/master/expansions.md) 
 Expansion boards, also known as "daughter boards" or shields.   
 
 ### Appendix
