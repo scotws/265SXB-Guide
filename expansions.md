@@ -11,6 +11,6 @@ PLD](http://www.mouser.com/ds/2/36/doc0453-35248.pdf) to add 1 MB of SRAM in the
 banks C0 to FF. 
 
 ![AJ 1 MB expansion board]
-(https://github.com/scotws/265SXB-Guide/blob/daughters/Images/265SXB-proj-shield-aj01.jpg)
+(https://github.com/scotws/265SXB-Guide/blob/master/Images/265SXB-proj-shield-aj01.jpg)
 
 _Image: 1 MB expansion board, created by Andrew Jacobs._
