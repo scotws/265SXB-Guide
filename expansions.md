@@ -5,12 +5,12 @@ with smaller plug-in boards, also known as "daughter boards", or "shields".
 
 ## Additional 1 MB of RAM
 
-This daughter board uses two AS6C4008 512K SRAM chips and one ATF16V8CZ-15PU PLD
-to add 1 MB of SRAM in the banks C0 to FF. 
+This daughter board created by Andrew Jacobs uses two [AS6C4008 512K SRAM
+chips](http://www.alliancememory.com/pdf/as6c4008.pdf) and one [ATF16V8CZ-15PU
+PLD](http://www.mouser.com/ds/2/36/doc0453-35248.pdf) to add 1 MB of SRAM in the
+banks C0 to FF. 
 
-AS6C4008 
-http://www.alliancememory.com/pdf/as6c4008.pdf
+![AJ 1 MB expansion board]
+(https://github.com/scotws/265SXB-Guide/blob/daughters/Images/265SXB-proj-shield-aj01.jpg)
 
-
-ATF16V8CZ-15PU
-http://www.mouser.com/ds/2/36/doc0453-35248.pdf
+_Image: 1 MB expansion board, created by Andrew Jacobs._
