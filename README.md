@@ -33,6 +33,9 @@ the box configuration, how chip select signals are generated.
 [Flash:](https://github.com/scotws/265SXB-Guide/blob/master/flash.md) How to
 install, select a bank, and erase and program the flash memory chip under
 software control.  
+[Serial
+Lines:](https://github.com/scotws/265SXB-Guide/blob/master/serial_lines.md)
+Connecting USB serial adapters to the serial lines of the 265SXB.  
 
 ### Software
 
