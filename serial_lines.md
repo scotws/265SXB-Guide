@@ -17,7 +17,7 @@ To find the correct pins, note that the *bottom right* pin of J5 is marked with
 a dot as pin 1 (5V). The one to the left of it is pin 2 (GND).
 
 ![J5 Header Pins]
-(https://github.com/scotws/265SXB-Guide/blob/serial/Images/W65C265SXB_J5_Header_Pins.png)
+(https://github.com/scotws/265SXB-Guide/blob/master/Images/W65C265SXB_J5_Header_Pins.png)
 
 To connect the USB serial adapter, connect ground to ground and the TXDs to
 RXDs.
