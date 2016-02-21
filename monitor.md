@@ -213,3 +213,7 @@ The manual states the maximum string size is limited to 640 characters. No
 arguments are returned, no errors are reported, all registers are preserved.
 Though the Manual states that the character is printed to port 3, it will
 work fine with the basic USB port.
+
+**SEND_CR** ("send carriage return", 00:E066, main code at 00:F1D6) - Prints a
+Carriage Return (CR, $0D) to screen. Simply puts $0D in the A register and calls
+PUT_CHR.
