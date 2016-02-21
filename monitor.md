@@ -85,11 +85,12 @@ Hexdump with 00:2000 as start location for testing with Mensch Monitor:
 ```
 002000: e2 20 c2 10 22 36 e0 00 00 00 
 ```
-When you run this program with ```j 002000``` from the Mensch Monitor, it will
-start waiting for the character immediately after the final 0, since the input
-of the Monitor command does not wait for a final ENTER. Hitting ENTER (common
-when first experimenting with the Mensch Monitor) will put $0D in the A
-register, the ASCII code for Carriage Return (CR).
+> When you test this program with ```j 002000``` from the Mensch Monitor, it 
+> will start waiting for the character immediately after the final 0 of the
+> address, because the Monitor command does not require a final ENTER. If you
+> do hit ENTER (common enough when first experimenting with the Mensch 
+> Monitor), this will put $0D in the A register, the ASCII code for Carriage 
+> Return (CR).
 
 **GET_STR** ("get string", 00:E03F, main code at 00:F3D7) - Receives a string
 from the console until either ENTER or ESC is received and stores the string
@@ -131,9 +132,9 @@ CONTROL-C will not abort the input, but will result in the ASCII character $03
 (end of text) being saved; a ENTER is still required to terminate the input. A
 single ESC will produce whitespace to the screen while testing in the Mensch
 Monitor and requires a second ESC to terminate. Terminating input with ESC will
-store everything up to, but not including the ESC ASCII character in the buffer,
-will set the carry flag, and will store 00 in the A register. Also, neither
-a carriage return (CR) nor the terminating zero are saved.
+store everything up to, but not including, the ESC ASCII character in the
+buffer, will set the carry flag, and will store 00 in the A register. However,
+neither a carriage return (CR) nor the terminating zero are saved.
 
 **GET_BYTE_FROM_PC** ("get byte from input buffer", 00:E033, main code at
 00:FBF9) - Returns a character from the input buffer. This routine must be
