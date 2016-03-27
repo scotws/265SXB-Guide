@@ -97,8 +97,8 @@ Assembled, this gives us the machine code:
 A9 00 8D 23 DF 00 A9 04 8D 23 DF 00
 ```
 As above, use the Mensch Monitor to store this sequence at 00:2000. To turn the
-LED on, type ```j``` followed by ```002000```; to turn it back off, jump to
-```002006```. 
+LED on, type ```j``` followed by ```002000```; to turn it back off, jump 
+to 00:2006. 
 
-Note there are other LEDs on the board, but they are tied to the chip select
-lines for the RAM and Flash memory.
+(Note there are other LEDs on the board, but they are tied to the chip select
+lines for the RAM and Flash memory.)
