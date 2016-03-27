@@ -75,10 +75,18 @@ These three signals are also exposed through the 50-pin XBus265 commector
 
 On hardware reset, the system first sets PCS7 to $00 and PD7 to $FF. However,
 during boot, the Mensch Monitor changes PCS7 to $FB and PD7 to $04 (see ROM
-listing at 00:E14B). In this configuration, bit 2 is kept as "1", which makes
-sure the system uses the on-chip interrupt vectors, on-chip ROM, on-chip RAM,
-timer, control and other regiesters from 00:DF00 to 00:DFBF and 00:0000 to
-00:01FF.
+listing at 00:E14B). 
+
+(Why is bit 2 special? It controls the LED D1. Keeping this bit as "0" (not set)
+in PCS7 makes the associated line a normal output line, reflecting whatever is
+at bit 2 of PD7. By default, that is "1" (set), because the LED is triggered
+when low. In other words, the LED is off. In our section on [Simple
+Programs](https://github.com/scotws/265SXB-Guide/blob/master/simple_programs.md),
+we show how to turn it on.)
+
+In this configuration, the system uses the on-chip interrupt vectors, on-chip
+ROM, on-chip RAM, timer, control and other regiesters from 00:DF00 to 00:DFBF
+and 00:0000 to 00:01FF.
 
 ## Adding more memory
 
