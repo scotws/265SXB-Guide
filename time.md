@@ -6,7 +6,7 @@ only T7 is only really freely available to the user.
 ## Timers
 
 | Timer | Name | Function | At boot | Clock | 
-| --- | :--- | :--- | --- |
+| --- | :--- | :--- | --- | --- |
 | T0 | Watchdog | Breaks infinite loops | off | (TBA) |
 | T1 | General purpose | Interrupts for time-of-day clock | on | CLK |
 | T2 | (TBA) | Can provide regular interrupts | (TBA) | FCLK/16 |
