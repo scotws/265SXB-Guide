@@ -16,17 +16,17 @@ only T7 is only really freely available to the user.
 | T6 | Tone generator | Telephone applications | (TBA) | FCLK |
 | T7 | (TBA) | Can provide interrupts  | off | FCLK |
 
-*T4* can count pulses on P60/TIN if not used as a baud rate generator, and
+T4 can count pulses on P60/TIN if not used as a baud rate generator, and
 provide square wave reference on P61/TOUT.
 
-*T7* can generate timer interrupts via TIFR or used for pulse width measurement
+T7 can generate timer interrupts via TIFR or used for pulse width measurement
 (PWM). 
 
 
 ## Time-of-Day Clock
 
-The time-of-day clock (TOD) is updated in one-second intervals by software
-- there is no RTC chip on the 265SXB. In low-power mode (invoked, for example,
+The time-of-day clock (TOD) is updated in one-second intervals by software. 
+There is no RTC chip on the 265SXB. In low-power mode (invoked, for example,
 by pressing "x" in the Mensch Monitor), the date and time are not lost, but
 they are also _not_ updated. 
 
