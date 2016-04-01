@@ -43,6 +43,8 @@ Connecting USB serial adapters to the serial lines of the 265SXB.
 Installing and working with the WDC development packages.  
 [The Monitor:](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
 Using the built-in Mensch Monitor program, a miniature operating system.
+[Clock and Timers:] (https://github.com/scotws/265SXB-Guide/blob/master/time.md)
+Using the built-in clock functions. 
 
 ### Projects and Expansions
 
