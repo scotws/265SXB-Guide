@@ -91,13 +91,15 @@ Hexdump with 00:2000 as start location for testing with Mensch Monitor:
 > Monitor), this will put $0D in the A register, the ASCII code for Carriage 
 > Return (CR).
 
-GET_CHR doesn't return keys like you would expect in the 21 Century.  ```Arrow
-Up```, ```Arrow Down```, ```ESC```, ```Page Up```, ```DEL```, and ```INS``` all
-return $1B with the carry bit clear - this is the [ASCII code for
-Escape](http://www.ascii-code.com/).  ```Backspace``` returns $7F. If you are
-going to use GET_CHR as a base for a command line input loop, you'll probably
-want to fall back on the CONTROL combinations known from the [Bash shell
-keyboard
+If you are using GET_CHR to grab entries, note that things are not as simple as
+just getting one byte. ```Arrow Up```, ```Arrow Down```, ```ESC```, ```Page
+Up```, ```DEL```, and ```INS``` all return $1B with the carry bit clear - 
+- this is the [ASCII code for Escape](http://www.ascii-code.com/) that is
+followed by other ASCII characters for VT100 terminals If you are going to use
+GET_CHR as a base for a command line input loop, you'll either have to include
+a timed loop to catch the other characters - see [this
+discussion](http://forum.6502.org/viewtopic.php?f=1&t=3552&p=49473#p49473) - or
+make due with the CONTROL combinations known from the [Bash shell keyboard
 shortcuts](http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/):
 
 Input  | GET_CHR code | ASCII of code | Bash function
