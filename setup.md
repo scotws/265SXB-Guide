@@ -36,7 +36,7 @@ in the previous set as the Serial Line. Click "Open" at the bottom of the window
 to create the connection.
 
 ![Putty Setup]
-(https://github.com/scotws/265SXB-Guide/tree/master/Images/putty_setup_20161225.png
+(https://github.com/scotws/265SXB-Guide/blob/master/Images/putty_setup_20161225.png
 "Putty Setup")
 
 5. On the 265SXB, push the Reset button to the right of the power jack J6. 
