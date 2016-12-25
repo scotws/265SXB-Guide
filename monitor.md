@@ -66,8 +66,7 @@ characters (decimal). Relevant code starts at 00:E2BC.
 character from the console, blocking until the character is received. Note this
 routine must be called with a long subroutine jump as ```JSL 00E036```. Returns
 with the carry bit clear and the character received in 8-bit A register. The
-character is not echoed, use GET_PUT_CHR for that. ESC is returned as $1B,
-CONTROL-C as $03 with carry bit clear.
+character is not echoed, use GET_PUT_CHR for that. 
 ```
    ; GET_CHR example program. All numbers are hex. Assumes native mode
 
@@ -91,6 +90,30 @@ Hexdump with 00:2000 as start location for testing with Mensch Monitor:
 > do hit ENTER (common enough when first experimenting with the Mensch 
 > Monitor), this will put $0D in the A register, the ASCII code for Carriage 
 > Return (CR).
+
+GET_CHR doesn't return keys like you would expect in the 21. century.  ```Arrow
+Up```, ```Arrow Down```, ```ESC```, ```Page Up```, ```DEL```, and ```INS``` all
+return $1B with the carry bit clear (this is the [ASCII code for
+Escape](http://www.ascii-code.com/).  ```Backspace``` returns $7F, curiously. If
+you are going to use GET_CHR as a base for input, you'll need to fall back on
+the CONTROL combinations known from the [Bash shell keyboard
+shortcuts](http://www.howtogeek.com/howto/ubuntu/keyboard-shortcuts-for-bash-command-shell-for-ubuntu-debian-suse-redhat-linux-etc/):
+
+Input  | GET_CHR code | ASCII of code | Bash function
+------ | -----------: | ------------- | --------------
+CTRL a | $01 | Start of Heading (SOH) |  move cursor to start of line ("home")
+CTRL b | $02 | Start of Text (STX) |  move cursor left
+CTRL c | $03 | End of Text (ETX)   |  abort current process
+CTRL d | $04 | End of Transmission (EOT) |  exit current shell
+CTRL e | $05 | Enquiry (ENQ) |  move cursor to end of line ("end")
+CTRL f | $06 | Acknowledgement (ACK) |  move cursor right
+CTRL h | $08 | Back Space (BS) |  rubout character ("backspace")
+CTRL l | $0c | Form Feed (FF) |  clear screen
+CTRL n | $0e | Shift Out (SO) |  next command ("down")
+CTRL p | $10 | Data Line Escape (DLE) |  previous command ("up")
+CTRL z | $1a | Substitute (SUB) | suspend process
+
+These all return the carry bit clear. 
 
 **GET_STR** ("get string", 00:E03F, main code at 00:F3D7) - Receives a string
 from the console until either ENTER or ESC is received and stores the string
