@@ -21,12 +21,23 @@ already present, install it with `sudo apt-get install putty` from a shell. To
 start the terminal program, you might need to type `sudo putty`.
 
 3. To find out which USB port on the host computer we are using, run `dmesg |
-grep tty` from the shell. In our case, the port is `/dev/ttyUSB0`.
+grep tty` from the shell. In our case, the port is `/dev/ttyUSB0`:
+```
+scot@core:~ dmesg | grep tty
+[    0.000000] console [tty0] enabled
+[    0.655088] 00:06: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a
+16550A
+[ 8791.523313] usb 3-6: FTDI USB Serial Device converter now attached to ttyUSB0
+```
 
 4. Configure putty: Under the Terminal setting, enable "implicit LF in every
 CR". Under the Session setting, select "Serial" and use the port address found
 in the previous set as the Serial Line. Click "Open" at the bottom of the window
 to create the connection.
+
+![Putty Setup]
+(https://github.com/scotws/265SXB-Guide/tree/master/Images/putty_setup_20161225.png
+"Putty Setup")
 
 5. On the 265SXB, push the Reset button to the right of the power jack J6. 
 
