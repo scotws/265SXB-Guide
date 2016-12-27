@@ -46,6 +46,20 @@ system. See the chapter on [The
 Monitor](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md) for more
 detail.
 
-Instead of putty, the command-line program `minicom` can be used. See
-https://help.ubuntu.com/community/Minicom for details.
+Instead of putty, the command-line program `minicom` can be used, which can do
+useful stuff like upload S28-records. 
+
+1. Install with `sudo apt-get install minicom`.
+
+2. After finding the USB port of the 265SXB as above, start minicom with `sudo
+   minicom -s`. 
+
+3. Configure the serial device as `/dev/ttyUSB0` and the Bps speed as `9600`.
+   Under the entry "Screen and keyboard", enable the adding of line feeds and
+   carriage returns. Save the configuration as "265sxb".
+
+4. After configuration, you can call the 265sxb with `sudo minicom 265sxb`.
+
+See
+[Ubuntu minicom help](https://help.ubuntu.com/community/Minicom) for details.
 
