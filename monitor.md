@@ -209,7 +209,8 @@ Simple Programs. Though the Manual states that the character is printed to port
 the console. Must be called with long subroutine jump as ```JSL 00E04E```. Put
 the bank of the string address in the 8-bit A register, and the rest of the
 address in the 16-bit X register. The string must be terminated by a zero byte
-(00, ASCII "null"). This routine calls PUT_CHR.  
+(00, ASCII "null"). This routine calls PUT_CHR. The routine does not add a
+carriage return and/or form feed. 
 ```
   ; PUT_STR example program. All numbers are hex
         .origin 2000            ; start at 00:2000
@@ -227,7 +228,7 @@ address in the 16-bit X register. The string must be terminated by a zero byte
         brk 00                  ; break to monitor; 00 is signature byte
 
   teststr
-        .string0 "Mensch"       ; assembler adds final zero byte
+        .byte "Mensch",0 
         .end
 ```
 Hexdump with 00:2000 as start location for testing with Mensch Monitor:
