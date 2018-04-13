@@ -209,8 +209,7 @@ vectors until the internal ROM is renabled.
 LDA #$80     ; Enable Mensch ROM
 TRB BCR
 ```
-![Memory Map]
-(Images/W65C256SXB_Memory_2.png)
+![Memory Map](Images/W65C256SXB_Memory_2.png)
 
 _Image: Bank 00 showing the three simplest memory configurations. Light: RAM,
 dark: ROM, red: I/O registers and 64 byte on-chip RAM, grey: empty._
