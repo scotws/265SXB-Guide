@@ -18,7 +18,7 @@ details.
 ## The Manual
 
 The [Mensch Monitor
-Manual](http://www.westerndesigncenter.com/Wdc/documentation/265monrom.pdf),
+Manual](http://www.westerndesigncenter.com/wdc/documentation/265monrom.pdf),
 formally the *W65C265S Monitor ROM REFERENCE MANUAL* describes accessing and
 using the Monitor. At time of writing this document, the current version was
 Release 2.0 from February 10, 1995. 
