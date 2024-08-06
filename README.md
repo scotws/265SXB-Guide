@@ -1,8 +1,8 @@
 # A Most Very Unofficial Guide to the W65C265SXB
 
-The W65C265SXB ("265SXB" for short) is an engineering development board produced
--- basically a single-board computer in the same sense as the Raspberry Pi -- by
-the Western Design Center (WDC). It is based on the W65C265S microcontroler,
+The W65C265SXB ("265SXB" for short) is an engineering development board
+-- basically a single-board computer in the same sense as the Raspberry Pi --
+produced the Western Design Center (WDC). It is based on the W65C265S microcontroller,
 which in turn has a 65816 MPU at its core -- the 8/16-bit hybrid "big sibling"
 of the famous 6502 MPU that powered classic computers such as the VIC-20 and
 Apple II. Because of the hybrid nature of the 65816, the 265SXB is pretty much
@@ -35,7 +35,9 @@ install, select a bank, and erase and program the flash memory chip under
 software control.  
 [Serial
 Lines:](https://github.com/scotws/265SXB-Guide/blob/master/serial_lines.md)
-Connecting USB serial adapters to the serial lines of the 265SXB.  
+Connecting USB serial adapters to the serial lines of the 265SXB.   
+[Clock and Timers:](https://github.com/scotws/265SXB-Guide/blob/master/time.md)
+Using the built-in clock functions.
 
 ### Software
 
@@ -43,13 +45,12 @@ Connecting USB serial adapters to the serial lines of the 265SXB.
 Installing and working with the WDC development packages.  
 [The Monitor:](https://github.com/scotws/265SXB-Guide/blob/master/monitor.md)
 Using the built-in Mensch Monitor program, a miniature operating system.  
-[Clock and Timers:](https://github.com/scotws/265SXB-Guide/blob/master/time.md)
-Using the built-in clock functions. 
+
 
 ### Projects and Expansions
 
-[Expansions:](https://github.com/scotws/265SXB-Guide/blob/master/expansions.md) 
-Expansion boards, also known as "daughter boards" or shields.   
+[Expansions:](https://github.com/scotws/265SXB-Guide/blob/master/expansions.md)
+Expansion boards, also known as "daughter boards" or shields.
 
 ### Appendix
 
